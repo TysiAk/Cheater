@@ -4,9 +4,9 @@ import re
 from replaceMathChar import replaceMathToReadableCharacters as rM
 
 
-#  ----------------------------------------------------------------
-# |  YES, THIS SCRIPT IS FOR BRAINLY. YOU DON'T NEED BRAINLY PLUS! |
-#  ----------------------------------------------------------------
+#  ----------------------------------
+# |  YES, THIS SCRIPT IS FOR BRAINLY |
+#  ----------------------------------
 
 
 #Get URL from USER
