@@ -17,6 +17,6 @@ def replaceMathToReadableCharacters(text):
     text = text.replace(r'&le', u'<=')
     text = text.replace(r'^{', u'^(')
     text = text.replace(r'log_{', u'log_(')
-    text = text.replace(r',', u', ')
     text = text.replace(r'in {', u'∈ <')
+    text = text.replace(r';', u' ')
     return text

@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 import urllib.request
 import re
 from replaceMathChar import replaceMathToReadableCharacters as rM
@@ -32,18 +31,16 @@ textFromAnswer = str(re.findall (r'suggestedAnswer(.*?)"@type":"Person"', str(re
 if textFromAnswer == '[]':
     #if there is no awarded answer, search normal answer
     textFromAnswer = re.findall(r'acceptedAnswer":{"@type":"Answer"(.*?)@type":"Person', str(respData), re.DOTALL)
-#END of IF
 
 #Get only clear text from Answer
-textFromAnswer = str(re.findall (r'"text":(.*?)","author"', str(textFromAnswer), re.DOTALL))
+textFromAnswer = str(re.findall (r'"text":"(.*?)","author"', str(textFromAnswer), re.DOTALL))
 
 if textFromAnswer == '[]':
     # if there is no any answer, print information 'bout that
     textFromAnswer = str('There is no answer')
-#END of IF
 
 #Prepare text to write into txt file, normalize math symbols, add descriptions etc
-textToWrite = 'QUESTION:\n\n' + rM(textFromQuestion) + u'\n\n\n\n ANSWER:\n\n' + rM(textFromAnswer)
+textToWrite = 'QUESTION:\n\n' + rM(str(textFromQuestion)[2:-2]) + u'\n\n\n\n ANSWER:\n\n' + rM(str(textFromAnswer)[2:-2])
 
 #Print output into txt file
 saveFile = open('result.txt', 'w')
